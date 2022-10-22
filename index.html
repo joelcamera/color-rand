@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Tab</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        font-family: sans-serif;
+    }
+
+    .canvas {
+        width:100vw;
+        padding-bottom:100vh
+    }
+
+    .place {
+        position: absolute;
+        width: 100vw;
+    }
+
+    .place:hover .colorText {
+        opacity: 100%;
+    }
+
+    @keyframes colorAnimation {
+        0% {
+            transform: translateY(-50%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    #firstColor {
+        animation: 0.2s ease-out 0s 1 colorAnimation;
+        padding-bottom: 41vh;
+    }
+
+    #secondColor {
+        animation: 0.2s ease-out 0s 1 colorAnimation;
+        padding-bottom: 67vh;
+    }
+
+    #thirdColor {
+        animation: 0.2s ease 0s 1 colorAnimation;
+        padding-bottom: 85vh;
+    }
+
+    #fourthColor {
+        padding-bottom: 100vh;
+    }
+
+    .colorText {
+        position: absolute;
+        bottom: 0;
+        padding: 3px 6px 3px 6px;
+        background: rgba(0,0,0,0.2);
+        border-radius: 0 3px 0 0;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .message {
+        background-color: rgba(0,0,0,0.3);
+        padding:10px 0;
+        width:100px;
+        text-align:center;
+        left:0;
+        right:0;
+        margin: auto;
+        top:50vh;
+        position: absolute;
+        border-radius: 4px;
+        z-index: 100;
+        color:white;
+        font-size:20px;
+        animation-name:message;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+    }
+    @keyframes message {
+        0% { transform: translateY(20px); opacity:0; }
+        10% { transform: translateY(0px); opacity:1; }
+        90% { transform: translateY(0px); opacity:1; }
+        100% { transform: translateY(-20px); opacity:0; }
+    }
+
+</style>
+
+<body>
+    <div class="canvas">
+        <div id="fourthColor" class="place c4">
+            <div>
+                <span id="fourthColorText" onclick="copyColor('fourthColorText')" class="colorText"></span>
+            </div>
+        </div>
+        <div id="thirdColor" class="place c3">
+            <div>
+                <span id="thirdColorText" onclick="copyColor('thirdColorText')" class="colorText"></span>
+            </div>
+        </div>
+        <div id="secondColor" class="place c2">
+            <div>
+                <span id="secondColorText" onclick="copyColor('secondColorText')" class="colorText"></span>
+            </div>
+        </div>
+        <div id="firstColor" class="place c1">
+            <div>
+                <span id="firstColorText" onclick="copyColor('firstColorText')" class="colorText"></span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

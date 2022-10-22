@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+
+  "name": "Color Rand",
+  "version": "1.0.0",
+  "author": "Joel Esteban Cámera",
+  "description": "Creates a new tab with four random colors",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "128": "icon128.png"
+  }
+}
